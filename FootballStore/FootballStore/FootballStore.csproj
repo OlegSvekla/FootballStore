@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\FootballStore.Core\FootballStore.Core.csproj" />
+    <ProjectReference Include="..\..\FootballStore.Infrastructure\FootballStore.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

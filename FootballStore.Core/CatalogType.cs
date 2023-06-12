@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace FootballStore.Core
 {
-    public sealed class CatalogItem : BaseEntity
+    internal class CatalogType
     {
-        public CatalogItem()
-        {
-                
-        }
     }
 }
