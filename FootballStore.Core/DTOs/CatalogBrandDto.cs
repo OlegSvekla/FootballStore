@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballStore.Core
+namespace FootballStore.Core.DTOs
 {
-    public sealed class CatalogBrand
+    public sealed class CatalogBrandDto
     {
         public int Id { get; set; }
 
         public string Brand { get; set; }
 
-        public CatalogBrand(string brand)
+        public CatalogBrandDto(string brand)
         {
             Brand = brand;
         }

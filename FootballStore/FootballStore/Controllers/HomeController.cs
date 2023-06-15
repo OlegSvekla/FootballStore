@@ -1,4 +1,4 @@
-﻿using FootballStore.Models;
+﻿using FootballStore.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

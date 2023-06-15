@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballStore.Core
+namespace FootballStore.Core.DTOs
 {
-    public sealed class CatalogItem 
+    public sealed class CatalogItemDto
     {
         public int Id { get; set; }
 
@@ -21,13 +21,13 @@ namespace FootballStore.Core
 
         public int CatalogTypeId { get; set; }
 
-        public CatalogType? CatalogType { get; set; }
+        public CatalogTypeDto? CatalogType { get; set; }
 
         public int CatalogBrandId { get; set; }
 
-        public CatalogBrand CatalogBrand { get; set; }
+        public CatalogBrandDto CatalogBrand { get; set; }
 
-        public CatalogItem(int catalogTypeId,
+        public CatalogItemDto(int catalogTypeId,
         int catalogBrandId,
         string description,
         string name,
