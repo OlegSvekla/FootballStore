@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\FootballStore.Core\FootballStore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\product\" />
+  </ItemGroup>
+
 </Project>
