@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FootballStore.Core.Interfaces.Services
 {
-    internal interface ICatalogService
+    public interface ICatalogService
     {
+        Task GetAllCatalog();
+        void ChooseItem(int id);
+
     }
 }

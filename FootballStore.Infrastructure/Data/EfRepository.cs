@@ -11,7 +11,7 @@ namespace FootballStore.Infrastructure.Data
 {
     public class EfRepository<T> : IRepository<T> where T : class
     {
-        private readonly CatalogContext _dbContext;
+        private readonly CatalogDbContext _dbContext;
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {

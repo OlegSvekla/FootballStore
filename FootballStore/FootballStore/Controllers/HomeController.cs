@@ -1,4 +1,5 @@
-﻿using FootballStore.ViewModels;
+﻿using FootballStore.Core.Interfaces.Services;
+using FootballStore.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,6 +8,8 @@ namespace FootballStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        private readonly ICatalogService _catalogService;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -18,9 +21,10 @@ namespace FootballStore.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public async Task <IActionResult> Privacy()
         {
-            return View();
+            var catalog = _catalogService.GetAllCatalog();
+            return View(catalog);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

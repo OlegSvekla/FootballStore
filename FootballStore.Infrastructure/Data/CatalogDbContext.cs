@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace FootballStore.Infrastructure.Data
 {
-    public sealed class CatalogContext : DbContext
+    public sealed class CatalogDbContext : DbContext
     {
-        public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
+        public CatalogDbContext(DbContextOptions<CatalogDbContext> options) : base(options)
         {
 
         }
