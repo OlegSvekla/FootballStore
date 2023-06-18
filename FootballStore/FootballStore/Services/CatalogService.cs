@@ -20,7 +20,7 @@ namespace FootballStore.Services
 
         public async Task GetAllCatalog()
         {
-            var catalog = _catalogItemRepository.GetAllAsync;
+            var catalog = await _catalogItemRepository.GetAllAsync();
         }
     }
 }

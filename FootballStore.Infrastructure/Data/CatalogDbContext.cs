@@ -15,8 +15,8 @@ namespace FootballStore.Infrastructure.Data
 
         }
 
-        DbSet<CatalogItemDto> catalogItemDtos { get; set; }
-        DbSet<CatalogBrandDto> catalogBrandDtos { get; set; }
-        DbSet<CatalogTypeDto> catalogTypeDtos { get; set; }
+        public DbSet<CatalogItemDto> CatalogItemDtos { get; set; }
+        public DbSet<CatalogBrandDto> CatalogBrandDtos { get; set; }
+        public DbSet<CatalogTypeDto> CatalogTypeDtos { get; set; }
     }
 }
