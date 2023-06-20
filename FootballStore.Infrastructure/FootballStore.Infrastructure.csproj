@@ -14,4 +14,8 @@
     <ProjectReference Include="..\FootballStore.Core\FootballStore.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>
