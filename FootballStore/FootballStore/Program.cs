@@ -4,7 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-FootballStore.ConfigurationForServices.ConfigurationForServices.ConfigureServices(builder.Configuration, builder.Services);
 
 var app = builder.Build();
 
