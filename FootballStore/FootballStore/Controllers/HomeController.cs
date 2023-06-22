@@ -1,4 +1,4 @@
-﻿using FootballStore.Models;
+﻿using FootballStore.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,6 +7,8 @@ namespace FootballStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
+        
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -20,6 +22,7 @@ namespace FootballStore.Controllers
 
         public IActionResult Privacy()
         {
+            
             return View();
         }
 
