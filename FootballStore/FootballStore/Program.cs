@@ -1,3 +1,4 @@
+using FootballStore.Configuration;
 using FootballStore.Core.Interfaces;
 using FootballStore.Core.Interfaces.Services;
 using FootballStore.Core.Models;
@@ -10,10 +11,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+//Dependencies
 builder.Services.AddScoped(typeof(IRepository<CatalogItem>), typeof(LocalCatalogItemRepository));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
+
+builder.Services.AddCoreServices();
+
 var app = builder.Build();
 
+app.Logger.LogInformation("App Created");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -35,4 +41,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Catalog}/{action=Index}/{id?}");
 
+app.Logger.LogDebug("Starting the app");
 app.Run();
