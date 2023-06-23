@@ -21,6 +21,11 @@ namespace FootballStore.Infrastructure
 
         };
 
+        public LocalCatalogItemRepository()
+        {
+                
+        }
+
         public List<CatalogItem> GetAll()
         {
             return _catalogItems;
