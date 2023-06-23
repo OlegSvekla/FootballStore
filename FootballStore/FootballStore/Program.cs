@@ -1,10 +1,17 @@
+using FootballStore.Core.Interfaces;
+using FootballStore.Core.Interfaces.Services;
+using FootballStore.Core.Models;
+using FootballStore.Infrastructure;
+using Microsoft.Build.Framework;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-
+builder.Services.AddScoped(typeof(IRepository<CatalogItem>), typeof(LocalCatalogItemRepository));
+builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

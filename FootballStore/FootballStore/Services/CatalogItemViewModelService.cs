@@ -13,9 +13,9 @@ namespace FootballStore.Core.Interfaces.Services
     {
         private readonly IRepository<CatalogItem> _catalogItemRepository;
 
-        public CatalogItemViewModelService()
+        public CatalogItemViewModelService(IRepository<CatalogItem> catalogItemRepository)
         {
-            _catalogItemRepository = new LocalCatalogItemRepository();
+            _catalogItemRepository = catalogItemRepository;
         }
 
         public void UpdaitCatalogItem(CatalogItemViewModel viewModel)
