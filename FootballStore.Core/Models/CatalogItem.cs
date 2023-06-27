@@ -13,8 +13,23 @@ namespace FootballStore.Core.Models
         public string Description { get; set; }
         public decimal Price { get; set; }
         public string PictureUrl { get; set; }
+
+        public int CatalogTypeId { get; set; }
         public CatalogType? CatalogType { get; set; }
+
+        public int CataloBrandId { get; set; }
         public CatalogBrand? CatalogBrand { get; set; }
+
+        public CatalogItem(int catalogTypeId,
+            int catalogBrandId, string description, string name, decimal price, string pictureUrl)
+        {
+            CatalogTypeId = catalogTypeId;
+            CataloBrandId = catalogBrandId;
+            Description = description;
+            Name = name;
+            Price = price;
+            PictureUrl = pictureUrl;
+        }
 
         public CatalogItem(int id, string name, string description, decimal price, string pictureUrl)
         {

@@ -11,5 +11,6 @@ namespace FootballStore.Core.Interfaces
         T? GetById(int id);
         void Update(T entity);
         List<T> GetAll();
+        Task<List<T>> GetAllAsync();
     }
 }
