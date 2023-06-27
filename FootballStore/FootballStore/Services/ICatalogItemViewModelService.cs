@@ -10,5 +10,6 @@ namespace FootballStore.Core.Interfaces.Services
     public interface ICatalogItemViewModelService
     {
         public void UpdaitCatalogItem(CatalogItemViewModel viewModel);
+        Task<IEnumerable<CatalogItemViewModel>> GetCatalogItems();
     }
 }

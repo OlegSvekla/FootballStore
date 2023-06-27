@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FootballStore.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(CatalogContext))]
-    [Migration("20230626141006_InitialSchema")]
+    [Migration("20230627113454_InitialSchema")]
     partial class InitialSchema
     {
         /// <inheritdoc />
@@ -50,10 +50,13 @@ namespace FootballStore.Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CataloBrandId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("CatalogBrandId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CatalogTypeId")
+                    b.Property<int>("CatalogTypeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -105,7 +108,9 @@ namespace FootballStore.Infrastructure.Data.Migrations
 
                     b.HasOne("FootballStore.Core.Models.CatalogType", "CatalogType")
                         .WithMany()
-                        .HasForeignKey("CatalogTypeId");
+                        .HasForeignKey("CatalogTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CatalogBrand");
 

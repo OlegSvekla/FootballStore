@@ -31,6 +31,11 @@ namespace FootballStore.Infrastructure
             return _catalogItems;
         }
 
+        public Task<List<CatalogItem>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public CatalogItem? GetById(int id)
         {
             var item = _catalogItems.FirstOrDefault(_=>_.Id==id);

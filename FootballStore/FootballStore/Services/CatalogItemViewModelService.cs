@@ -14,10 +14,27 @@ namespace FootballStore.Core.Interfaces.Services
         private readonly IRepository<CatalogItem> _catalogItemRepository;
         private readonly IAppLogger<CatalogItemViewModelService> _logger;
 
-        public CatalogItemViewModelService(IRepository<CatalogItem> catalogItemRepository, IAppLogger<CatalogItemViewModelService> logger)
+        public CatalogItemViewModelService(IRepository<CatalogItem> catalogItemRepository,
+            IAppLogger<CatalogItemViewModelService> logger)
         {
             _catalogItemRepository = catalogItemRepository;
             _logger = logger;
+        }
+
+        public async Task<IEnumerable<CatalogItemViewModel>> GetCatalogItems()
+        {
+            var entities = await _catalogItemRepository.GetAllAsync();
+
+            var catalogItems = entities.Select(item => new CatalogItemViewModel()
+            {
+                Id = item.Id,
+                Name = item.Name,
+                PictureUrl = item.PictureUrl,
+                Price = item.Price,
+
+            }).ToList();
+
+            return catalogItems;
         }
 
         public void UpdaitCatalogItem(CatalogItemViewModel viewModel)

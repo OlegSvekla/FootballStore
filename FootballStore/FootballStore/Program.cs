@@ -15,7 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 //Dependencies
-builder.Services.AddScoped(typeof(IRepository<CatalogItem>), typeof(LocalCatalogItemRepository));
+builder.Services.AddScoped(typeof(IRepository<CatalogItem>), typeof(EfRepository<CatalogItem>));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
 
 builder.Services.AddCoreServices();
@@ -34,7 +34,7 @@ using(var scope = app.Services.CreateScope())
 		{
 			catalogContext.Database.Migrate();
 		}
-		//await CatalogContextSeed.SeedAsync(catalogContext, app.Logger);
+		await CatalogContextSeed.SeedAsync(catalogContext, app.Logger);
 	}
 	catch (Exception ex)
 	{
