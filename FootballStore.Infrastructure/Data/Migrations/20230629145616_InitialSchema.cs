@@ -47,8 +47,7 @@ namespace FootballStore.Infrastructure.Data.Migrations
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     PictureUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CatalogTypeId = table.Column<int>(type: "int", nullable: false),
-                    CataloBrandId = table.Column<int>(type: "int", nullable: false),
-                    CatalogBrandId = table.Column<int>(type: "int", nullable: true)
+                    CatalogBrandId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -57,7 +56,8 @@ namespace FootballStore.Infrastructure.Data.Migrations
                         name: "FK_CatalogItems_CatalogBrands_CatalogBrandId",
                         column: x => x.CatalogBrandId,
                         principalTable: "CatalogBrands",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CatalogItems_CatalogTypes_CatalogTypeId",
                         column: x => x.CatalogTypeId,

@@ -1,10 +1,7 @@
 using FootballStore.Configuration;
 using FootballStore.Core.Interfaces;
 using FootballStore.Core.Interfaces.Services;
-using FootballStore.Core.Models;
-using FootballStore.Infrastructure;
 using FootballStore.Infrastructure.Data;
-using Microsoft.Build.Framework;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,11 +11,11 @@ FootballStore.Infrastructure.Dependencies.ConfigureServices(builder.Configuratio
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-//Dependencies
+//IoC
+builder.Services.AddCoreServices();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
-
-builder.Services.AddCoreServices();
+//builder.Services.AddSingleton<IUriComposer>(new UriComposer(builder.Configuration.Get<CatalogSettings>()));
 
 var app = builder.Build();
 app.Logger.LogInformation("App Created");
@@ -50,6 +47,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

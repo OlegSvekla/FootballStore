@@ -17,10 +17,10 @@
         </form>
     </div>
 </section>
-<div calss="container">
+<div class="container">
     @if (Model.CatalogItems.Any())
     {
-        <div calss="row">
+        <div class="row">
             @foreach (var catalogItem in Model.CatalogItems)
             {
                 <img src="@catalogItem.PictureUrl"/>

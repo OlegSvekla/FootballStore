@@ -50,27 +50,27 @@ namespace FootballStore.Infrastructure.Data
         {
             return new List<CatalogItem>()
             {
-                new(1,1, "BallAdidas1", "Desctiption", 14.3M,"/images/products/BallAdidas1.jpg"),
-                new(1,1, "BallAdidas2", "Desctiption", 13.3M,"/images/products/BallAdidas2.jpg" ),
-                new(1,1, "BallAdidas3", "Desctiption", 12.2M,"/images/products/BallAdidas3.jpg"),
-                new(1,1, "BallAdidas4", "Desctiption", 12.2M,"/images/products/BallAdidas4.jpg"),
-                new(1,1, "BallAdidas5", "Desctiption", 12.2M,"/images/products/BallAdidas5.jpg"),
-                new(1,1, "BallAdidas6", "Desctiption", 12.2M,"/images/products/BallAdidas6.jpg"),
+                new(1,1, "BallAdidas1", "Desctiption", 14.3M,"images/products/Balls/BallAdidas1.jpg"),
+                new(1,1, "BallAdidas2", "Desctiption", 13.3M,"images/products/Balls/BallAdidas2.jpg" ),
+                new(1,1, "BallAdidas3", "Desctiption", 12.2M,"images/products/Balls/BallAdidas3.jpg"),
+                new(1,1, "BallAdidas4", "Desctiption", 12.2M,"images/products/Balls/BallAdidas4.jpg"),
+                new(1,1, "BallAdidas5", "Desctiption", 12.2M,"images/products/Balls/BallAdidas5.jpg"),
+                new(1,1, "BallAdidas6", "Desctiption", 12.2M,"images/products/Balls/BallAdidas6.jpg"),
 
-                new(1,2, "BallNike1", "Desctiption", 12.2M,"/images/products/BallNike1.jpg"),
-                new(1,2, "BallNike2", "Desctiption", 12.2M,"/images/products/BallNike2.jpg"),
-                new(1,2, "BallNike3", "Desctiption", 12.2M,"/images/products/BallNike3.jpg"),
+                new(1,2, "BallNike1", "Desctiption", 12.2M,"images/products/Balls/BallNike1.jpg"),
+                new(1,2, "BallNike2", "Desctiption", 12.2M,"images/products/Balls/BallNike2.jpg"),
+                new(1,2, "BallNike3", "Desctiption", 12.2M,"images/products/Balls/BallNike3.jpg"),
 
-                new(2,1, "ShoesAdidas1", "Desctiption", 12.2M,"/images/products/ShoesAdidas1.jpg"),
-                new(2,1, "ShoesAdidas2", "Desctiption", 12.2M,"/images/products/ShoesAdidas2.jpg"),
-                new(2,1, "ShoesAdidas3", "Desctiption", 12.2M,"/images/products/ShoesAdidas3.jpg"),
-                new(2,1, "ShoesAdidas4", "Desctiption", 12.2M,"/images/products/ShoesAdidas4.jpg"),
+                new(2,1, "ShoesAdidas1", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas1.jpg"),
+                new(2,1, "ShoesAdidas2", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas2.jpg"),
+                new(2,1, "ShoesAdidas3", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas3.jpg"),
+                new(2,1, "ShoesAdidas4", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas4.jpg"),
 
-                new(2,2, "ShoesNike1", "Desctiption", 12.2M,"/images/products/ShoesNike1.jpg"),
-                new(2,2, "ShoesNike2", "Desctiption", 12.2M,"/images/products/ShoesNike2.jpg"),
-                new(2,2, "ShoesNike3", "Desctiption", 12.2M,"/images/products/ShoesNike3.jpg"),
-                new(2,2, "ShoesNike4", "Desctiption", 12.2M,"/images/products/ShoesNike4.jpg"),
-                new(2,2, "ShoesNike5", "Desctiption", 12.2M,"/images/products/ShoesNike5.jpg")
+                new(2,2, "ShoesNike1", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike1.jpg"),
+                new(2,2, "ShoesNike2", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike2.jpg"),
+                new(2,2, "ShoesNike3", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike3.jpg"),
+                new(2,2, "ShoesNike4", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike4.jpg"),
+                new(2,2, "ShoesNike5", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike5.jpg")
 
             };
         }
@@ -103,7 +103,7 @@ namespace FootballStore.Infrastructure.Data
                 new ("Shorts"),
                 new ("CompressionWear"),
                 new ("TrainingEquipment"),
-                new ("Accessories"),
+                new ("Accessories")
             };
         }
     }

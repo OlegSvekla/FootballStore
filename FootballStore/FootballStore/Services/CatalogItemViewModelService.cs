@@ -16,31 +16,32 @@ namespace FootballStore.Core.Interfaces.Services
         private readonly IRepository<CatalogBrand> _brandRepository;
         private readonly IRepository<CatalogType> _typeRepository;
         private readonly IAppLogger<CatalogItemViewModelService> _logger;
+        //private readonly IUriComposer _uriComposer;
 
         public CatalogItemViewModelService(IRepository<CatalogItem> catalogItemRepository,
             IAppLogger<CatalogItemViewModelService> logger,
             IRepository<CatalogBrand> brandRepositor,
             IRepository<CatalogType> typeRepository)
+            //IUriComposer uriComposer)
         {
             _catalogItemRepository = catalogItemRepository;
             _logger = logger;
             _brandRepository = brandRepositor;
             _typeRepository = typeRepository;
+            //_uriComposer = uriComposer;
         }
-
-        
 
         public async Task<CatalogIndexViewModel> GetCatalogItems(int? brandId, int? typeId)
         {
             var entities = await _catalogItemRepository.GetAllAsync();
 
-            var catalogItems = entities.Where(item => (!brandId.HasValue || item.CataloBrandId == brandId)
+            var catalogItems = entities.Where(item => (!brandId.HasValue || item.CatalogBrandId == brandId)
             &&(!typeId.HasValue || item.CatalogTypeId == typeId))
             .Select(item => new CatalogItemViewModel()
             {
                 Id = item.Id,
                 Name = item.Name,
-                PictureUrl = item.PictureUrl,
+                PictureUrl = /*_uriComposer.ComposeImageUri*/item.PictureUrl,
                 Price = item.Price,
 
             }).ToList();
