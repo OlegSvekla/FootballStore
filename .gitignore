@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /FootballStore/FootballStore/Controllers/CatalogController.cs
+/FootballStore/FootballStore/Controllers/CatalogController.cs
