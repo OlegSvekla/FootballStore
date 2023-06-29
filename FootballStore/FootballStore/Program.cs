@@ -15,7 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 //Dependencies
-builder.Services.AddScoped(typeof(IRepository<CatalogItem>), typeof(EfRepository<CatalogItem>));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
 
 builder.Services.AddCoreServices();
