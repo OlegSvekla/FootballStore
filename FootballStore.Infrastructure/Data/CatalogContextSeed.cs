@@ -50,27 +50,27 @@ namespace FootballStore.Infrastructure.Data
         {
             return new List<CatalogItem>()
             {
-                new(1,1, "BallAdidas1", "Desctiption", 14.3M,"images/products/Balls/BallAdidas1.jpg"),
-                new(1,1, "BallAdidas2", "Desctiption", 13.3M,"images/products/Balls/BallAdidas2.jpg" ),
-                new(1,1, "BallAdidas3", "Desctiption", 12.2M,"images/products/Balls/BallAdidas3.jpg"),
-                new(1,1, "BallAdidas4", "Desctiption", 12.2M,"images/products/Balls/BallAdidas4.jpg"),
-                new(1,1, "BallAdidas5", "Desctiption", 12.2M,"images/products/Balls/BallAdidas5.jpg"),
-                new(1,1, "BallAdidas6", "Desctiption", 12.2M,"images/products/Balls/BallAdidas6.jpg"),
+                new(1,1, "BallAdidas1", "Desctiption", 14.3M,"images/products/Balls/Adidas/BallAdidas1.jpg"),
+                new(1,1, "BallAdidas2", "Desctiption", 13.3M,"images/products/Balls/Adidas/BallAdidas2.jpg" ),
+                new(1,1, "BallAdidas3", "Desctiption", 12.2M,"images/products/Balls/Adidas/BallAdidas3.jpg"),
+                new(1,1, "BallAdidas4", "Desctiption", 12.2M,"images/products/Balls/Adidas/BallAdidas4.jpg"),
+                new(1,1, "BallAdidas5", "Desctiption", 12.2M,"images/products/Balls/Adidas/BallAdidas5.jpg"),
+                new(1,1, "BallAdidas6", "Desctiption", 12.2M,"images/products/Balls/Adidas/BallAdidas6.jpg"),
 
-                new(1,2, "BallNike1", "Desctiption", 12.2M,"images/products/Balls/BallNike1.jpg"),
-                new(1,2, "BallNike2", "Desctiption", 12.2M,"images/products/Balls/BallNike2.jpg"),
-                new(1,2, "BallNike3", "Desctiption", 12.2M,"images/products/Balls/BallNike3.jpg"),
+                new(1,2, "BallNike1", "Desctiption", 12.2M,"images/products/Balls/Nike/BallNike1.jpg"),
+                new(1,2, "BallNike2", "Desctiption", 12.2M,"images/products/Balls/Nike/BallNike2.jpg"),
+                new(1,2, "BallNike3", "Desctiption", 12.2M,"images/products/Balls/Nike/BallNike3.jpg"),
 
-                new(2,1, "ShoesAdidas1", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas1.jpg"),
-                new(2,1, "ShoesAdidas2", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas2.jpg"),
-                new(2,1, "ShoesAdidas3", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas3.jpg"),
-                new(2,1, "ShoesAdidas4", "Desctiption", 12.2M,"images/products/Shoes/ShoesAdidas4.jpg"),
+                new(2,1, "ShoesAdidas1", "Desctiption", 12.2M,"images/products/Shoes/Adidas/ShoesAdidas1.jpg"),
+                new(2,1, "ShoesAdidas2", "Desctiption", 12.2M,"images/products/Shoes/Adidas/ShoesAdidas2.jpg"),
+                new(2,1, "ShoesAdidas3", "Desctiption", 12.2M,"images/products/Shoes/Adidas/ShoesAdidas3.jpg"),
+                new(2,1, "ShoesAdidas4", "Desctiption", 12.2M,"images/products/Shoes/Adidas/ShoesAdidas4.jpg"),
 
-                new(2,2, "ShoesNike1", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike1.jpg"),
-                new(2,2, "ShoesNike2", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike2.jpg"),
-                new(2,2, "ShoesNike3", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike3.jpg"),
-                new(2,2, "ShoesNike4", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike4.jpg"),
-                new(2,2, "ShoesNike5", "Desctiption", 12.2M,"images/products/Shoes/ShoesNike5.jpg")
+                new(2,2, "ShoesNike1", "Desctiption", 12.2M,"images/products/Shoes/Nike/ShoesNike1.jpg"),
+                new(2,2, "ShoesNike2", "Desctiption", 12.2M,"images/products/Shoes/Nike/ShoesNike2.jpg"),
+                new(2,2, "ShoesNike3", "Desctiption", 12.2M,"images/products/Shoes/Nike/ShoesNike3.jpg"),
+                new(2,2, "ShoesNike4", "Desctiption", 12.2M,"images/products/Shoes/Nike/ShoesNike4.jpg"),
+                new(2,2, "ShoesNike5", "Desctiption", 12.2M,"images/products/Shoes/Nike/ShoesNike5.jpg")
 
             };
         }

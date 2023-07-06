@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace FootballStore.Core.Models
 {
-    internal class Basket
+    public sealed class Basket
     {
+        public int Id { get; set; }
+        public string BuyerId { get; set; }
+
+        public Basket()
+        {
+            
+        }
+
+        public Basket(string userName)
+        {
+            BuyerId = userName;
+        }
     }
 }

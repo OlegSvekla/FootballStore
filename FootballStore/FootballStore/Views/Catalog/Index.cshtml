@@ -4,7 +4,7 @@
     ViewData["Title"] = "Catalog";
 }
 
-<section>
+@*<section>
     <div>
         <form method="get">
             <label data-title="brand">
@@ -16,19 +16,42 @@
             <input type="submit" value="Apply Filter"/>
         </form>
     </div>
+</section>*@
+<section class="esh-catalog-filters">
+    <div class="container">
+        <form method="get">
+            <label class="esh-catalog-label" data-tittle="brand">
+                <select asp-for="@Model.BrandFilterAplied" asp-items="@Model.Brands" class="esh-catalog-filter"></select>
+            </label>
+            <label class="esh-catalog-label" data-tittle="type">
+                <select asp-for="@Model.TypesFilterAplied" asp-items="@Model.Types" class="esh-catalog0filter"></select>
+            </label>
+            <input class="esh-catalog-send" type="image" src="/images/arrow-right/svg"/>
+        </form>
+    </div>
 </section>
+
 <div class="container">
     @if (Model.CatalogItems.Any())
     {
-        <div class="row">
+        <div class="esh-catalog-items row">
             @foreach (var catalogItem in Model.CatalogItems)
             {
-                <img src="@catalogItem.PictureUrl"/>
-                <div>
-                    <span>@catalogItem.Name</span>
-                </div>
-                <div>
-                    <span>@catalogItem.Price</span>
+                <div class="esh-catalog-item col-md-4">
+                    <form method="post">
+                        <img class="esh-catalog-thumbnail" src="@catalogItem.PictureUrl" />
+                        <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]" />
+                        <div class="esh-catalog-name">
+                            <span>@catalogItem.Name</span>
+                        </div>
+                        <div class="esh-catalog-price">
+                            <span>@catalogItem.Price.ToString("N2")</span>
+                        </div>
+                        <input type="hidden" asp-for="@catalogItem.Id" name="id" />
+                        <input type="hidden" asp-for="@catalogItem.Name" name="name" />
+                        <input type="hidden" asp-for="@catalogItem.PictureUrl" name="pictureUri" />
+                        <input type="hidden" asp-for="@catalogItem.Price" name="price" />
+                    </form>
                 </div>
             }
         </div>

@@ -18,6 +18,13 @@ namespace FootballStore.Infrastructure.Data
             _dBContext = dBContext;
         }
 
+        public async Task<T> AddAsync(T entity)
+        {
+            var result = await _dBContext.AddAsync<T>(entity);
+            _ = await _dBContext.SaveChangesAsync();
+            return entity;
+        }
+
         public List<T> GetAll()
         {
             throw new NotImplementedException();
