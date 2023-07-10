@@ -9,6 +9,6 @@ namespace FootballStore.Core.Interfaces
 {
     public interface IBasketService
     {
-        Task<Basket> AddItem2Basket(string username);
+        Task<Basket> AddItem2Basket(string username, int catalogItemId, decimal price, int quantity = 1);
     }
 }
