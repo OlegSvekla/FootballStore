@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FootballStore.Core.Interfaces
 {
-    //public interface IUriComposer
-    //{
-    //    string ComposeImageUri(string uriTemplate);
-    //}
+    public interface IUriComposer
+    {
+        string ComposeImageUri(string uriTemplate);
+    }
 }

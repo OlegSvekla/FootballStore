@@ -1,6 +1,8 @@
 using FootballStore.Configuration;
+using FootballStore.Core;
 using FootballStore.Core.Interfaces;
 using FootballStore.Core.Interfaces.Services;
+using FootballStore.Core.Servicess;
 using FootballStore.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +17,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddCoreServices();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
-//builder.Services.AddSingleton<IUriComposer>(new UriComposer(builder.Configuration.Get<CatalogSettings>()));
+builder.Services.AddSingleton<IUriComposer>(new UriComposer(builder.Configuration.Get<CatalogSettings>()));
+builder.Services.AddScoped<IBasketService, BasketService>();
 
 var app = builder.Build();
 app.Logger.LogInformation("App Created");

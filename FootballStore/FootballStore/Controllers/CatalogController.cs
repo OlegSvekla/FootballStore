@@ -15,20 +15,33 @@ namespace FootballStore.Controllers
         //fgdfgd
         private readonly ICatalogItemViewModelService _catalogItemViewModelService;
         private readonly IRepository<CatalogItem> _catalogRepository;
+        private readonly IBasketService _basketService;
 
         public CatalogController(ICatalogItemViewModelService catalogItemViewModelService,
-            IRepository<CatalogItem> catalogRepository)
+            IRepository<CatalogItem> catalogRepository,
+            IBasketService basketService)
         {
             _catalogItemViewModelService = catalogItemViewModelService;
             _catalogRepository = catalogRepository;
+            _basketService = basketService;
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Index(int? brandFilterAplied, int? typesFilterAplied)
         {
-            var viewModel = await _catalogItemViewModelService.GetCatalogItems(brandFilterAplied, typesFilterAplied);
+            var userName = GetOrSetBasketCookieAndUserName();
 
+            var viewModel = await _catalogItemViewModelService.GetCatalogItems(brandFilterAplied, typesFilterAplied);
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(int id, decimal price)
+        {
+            var userName = GetOrSetBasketCookieAndUserName();
+            var basket = await _basketService.AddItem2Basket(userName, id, price);
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Details(int id)
@@ -82,6 +95,35 @@ namespace FootballStore.Controllers
                 return View();
             }
         }
+
+        private string GetOrSetBasketCookieAndUserName()
+        {
+            string? userName = default;
+
+            if (this.HttpContext.User.Identity.IsAuthenticated)
+            {
+                return this.Request.HttpContext.User.Identity.Name;
+            }
+
+            if (this.Request.Cookies.ContainsKey("fShop")) 
+            {
+                userName = Request.Cookies["fShop"];
+
+                if (!Request.HttpContext.User.Identity.IsAuthenticated) 
+                {
+                    userName = default;
+                }
+            }
+
+            if (userName != null) return userName;
+
+            userName = Guid.NewGuid().ToString();
+            var cookieOptions = new CookieOptions();
+            cookieOptions.Expires = DateTime.Now.AddDays(30);
+            Response.Cookies.Append("fShop", userName, cookieOptions);
+            return userName;
+        }
+
 
     }
 }
