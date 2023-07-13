@@ -31,5 +31,33 @@ namespace FootballStore.Core.Servicess
 
             return basket;
         }
+
+        public async Task<Basket> RemoveItemFromBasket(string username, int catalogItemId)
+        {
+            var basket = await _basketRepository.FirstOrDefaultAsync(b => b.BuyerId == username);
+            if (basket != null)
+            {
+                basket.RemoveItem(catalogItemId);
+                await _basketRepository.UpdateAsync(basket);
+            }
+
+            return basket;
+        }
+
+        public async Task<Basket> UpdateBasket(string username, Dictionary<int, int> itemQuantityPairs)
+        {
+            var basket = await _basketRepository.FirstOrDefaultAsync(b => b.BuyerId == username);
+            if (basket != null)
+            {
+                foreach (var pair in itemQuantityPairs)
+                {
+                    basket.UpdateItemQuantity(pair.Key, pair.Value);
+                }
+
+                await _basketRepository.UpdateAsync(basket);
+            }
+
+            return basket;
+        }
     }
 }

@@ -9,10 +9,9 @@
   <ItemGroup>
     <Compile Remove="DTOs\**" />
     <Compile Remove="Interfaces\IRepository\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Interfaces\Repositories\" />
+    <Compile Remove="Interfaces\Repositories\**" />
+    <EmbeddedResource Remove="Interfaces\Repositories\**" />
+    <None Remove="Interfaces\Repositories\**" />
   </ItemGroup>
 
 </Project>

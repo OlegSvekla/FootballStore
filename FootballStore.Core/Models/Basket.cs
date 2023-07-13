@@ -16,7 +16,7 @@ namespace FootballStore.Core.Models
 
         public Basket()
         {
-            
+
         }
 
         public Basket(string userName)
@@ -26,7 +26,7 @@ namespace FootballStore.Core.Models
 
         public void AddItem(int catalogItemId, decimal unitPrice, int quantity = 1)
         {
-            if(!Items.Any(i => i.CatalogItemId == catalogItemId))
+            if (!Items.Any(i => i.CatalogItemId == catalogItemId))
             {
                 _items.Add(new BasketItem(catalogItemId, quantity, unitPrice));
                 return;
@@ -35,5 +35,22 @@ namespace FootballStore.Core.Models
             existingItem.AddQuantity(quantity);
         }
 
+        public void RemoveItem(int catalogItemId)
+        {
+            var itemToRemove = Items.FirstOrDefault(i => i.CatalogItemId == catalogItemId);
+            if (itemToRemove != null)
+            {
+                _items.Remove(itemToRemove);
+            }
+        }
+
+        public void UpdateItemQuantity(int catalogItemId, int newQuantity)
+        {
+            var existingItem = Items.FirstOrDefault(i => i.CatalogItemId == catalogItemId);
+            if (existingItem != null)
+            {
+                existingItem.SetQuantity(newQuantity);
+            }
+        }
     }
 }
