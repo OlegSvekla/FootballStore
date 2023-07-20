@@ -4,14 +4,20 @@ using FootballStore.Core.Interfaces;
 using FootballStore.Core.Interfaces.Services;
 using FootballStore.Core.Servicess;
 using FootballStore.Infrastructure.Data;
+using FootballStore.Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 FootballStore.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
+//Configure Identity
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+	.AddEntityFrameworkStores<AppIdentityDbContext>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
 
 //IoC
 builder.Services.AddCoreServices();
@@ -35,6 +41,12 @@ using(var scope = app.Services.CreateScope())
 			catalogContext.Database.Migrate();
 		}
 		await CatalogContextSeed.SeedAsync(catalogContext, app.Logger);
+
+		var identityContext = scopedProvider.GetRequiredService<AppIdentityDbContext>();
+		if (identityContext.Database.IsSqlServer())
+		{
+			identityContext.Database.Migrate();
+		}
 	}
 	catch (Exception ex)
 	{
