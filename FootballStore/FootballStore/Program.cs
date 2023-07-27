@@ -5,14 +5,19 @@ using FootballStore.Core.Interfaces.Services;
 using FootballStore.Core.Servicess;
 using FootballStore.Infrastructure.Data;
 using FootballStore.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 FootballStore.Infrastructure.Dependencies.ConfigureServices(builder.Configuration, builder.Services);
 
+//TODO SET the ASP.Net Identity Integration
 //Configure Identity
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-	.AddEntityFrameworkStores<AppIdentityDbContext>();
+builder.Services
+	.AddIdentity<ApplicationUser, IdentityRole>()
+	.AddDefaultUI()
+	.AddEntityFrameworkStores<AppIdentityDbContext>()
+	.AddDefaultTokenProviders();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -70,6 +75,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
