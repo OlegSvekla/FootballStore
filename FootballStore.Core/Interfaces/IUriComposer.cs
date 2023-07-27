@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballStore.Core
+namespace FootballStore.Core.Interfaces
 {
-    internal class CatalogItem
+    public interface IUriComposer
     {
+        string ComposeImageUri(string uriTemplate);
     }
 }

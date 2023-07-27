@@ -1,0 +1,23 @@
+﻿.esh-catalog-send{
+    background-color:#83D01B;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: -1.5rem;
+    transition: all 0.35s;
+}
+.esh-catalog-send:hover{
+    background-color: #4a760f;
+    transition: all 0.35s;
+}
+.esh-catalog-thumbnail-container {
+    width: 200px; /* Установите фиксированную ширину */
+    height: 200px; /* Установите фиксированную высоту */
+    overflow: hidden; /* Обрезать изображение, если оно больше заданных размеров */
+}
+
+.esh-catalog-thumbnail {
+    width: 100%; /* Заполнить контейнер по ширине */
+    height: 100%; /* Заполнить контейнер по высоте */
+    object-fit: cover; /* Масштабировать изображение с сохранением пропорций и обрезать его для заполнения контейнера */
+}
