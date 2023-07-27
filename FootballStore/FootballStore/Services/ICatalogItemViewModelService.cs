@@ -14,5 +14,6 @@ namespace FootballStore.Core.Interfaces.Services
         Task <CatalogIndexViewModel> GetCatalogItems(int? brandId, int?typeId);
         Task<IEnumerable<SelectListItem>> GetBrands();
         Task<IEnumerable<SelectListItem>> GetTypes();
+        Task<CatalogIndexViewModel> GetCatalogItems(int pageindex, int itemsPage, int? brandId, int? typeId);
     }
 }

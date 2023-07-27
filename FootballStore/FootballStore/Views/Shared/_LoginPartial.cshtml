@@ -27,5 +27,6 @@
     }
 </ul>
 <section class="col-lg-1 col-xs-12">
-    <partial name="/Views/Shared/MyPartials/_BasketPartial.cshtml" />
+    @*<partial name="/Views/Shared/MyPartials/_BasketPartial.cshtml" />*@
+    <@await Component.InvokeAsync("Basket")
 </section>

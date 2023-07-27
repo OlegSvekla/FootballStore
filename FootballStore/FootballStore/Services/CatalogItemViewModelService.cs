@@ -56,6 +56,11 @@ namespace FootballStore.Core.Interfaces.Services
             return vm;
         }
 
+        public async Task<CatalogIndexViewModel> GetCatalogItems(int pageindex, int itemsPage, int? brandId, int? typeId)
+        {
+            return await GetCatalogItems(brandId, typeId);
+        }
+
         public async Task<IEnumerable<SelectListItem>> GetBrands()
         {
             _logger.LogInformation("Get Brandes calls");

@@ -5,6 +5,8 @@ using FootballStore.Core.Interfaces.Services;
 using FootballStore.Core.Servicess;
 using FootballStore.Infrastructure.Data;
 using FootballStore.Infrastructure.Identity;
+using FootballStore.Interfaces;
+using FootballStore.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,6 +32,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
 builder.Services.AddSingleton<IUriComposer>(new UriComposer(builder.Configuration.Get<CatalogSettings>()));
 builder.Services.AddScoped<IBasketService, BasketService>();
+builder.Services.AddScoped<IBasketViewModelService, BasketViewModelService>();
 
 var app = builder.Build();
 app.Logger.LogInformation("App Created");
